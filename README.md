@@ -20,13 +20,24 @@ print(Animal.ANT.value)
 # 1
 list(Animal)
 # [<Animal.ANT: 1>, <Animal.BEE: 2>, <Animal.CAT: 3>, <Animal.DOG: 4>]
+
+
+IntAnimal = Enum.IntEnum('IntAnimal','ANT BEE CAT DOG')
+list(IntAnimal)
+#  [<IntAnimal.ANT: 1>, <IntAnimal.BEE: 2>, <IntAnimal.CAT: 3>, <IntAnimal.DOG: 4>]
+print(IntAnimal.ANT.value)
+# 1
+IntAnimal.ANT + 1
+# 2
+IntAnimal.ANT.CAT == IntAnimal.CAT
+# True
 ```
 
 **JavaScript:**
 ```
 import Enum from 'enum'
 
-Animal = Enum('Animal', 'ANT BEE CAT DOG')
+const Animal = Enum('Animal', 'ANT BEE CAT DOG')
 console.log(Animal) 
 // ƒ [object Function]
 console.log(Animal.ANT)
@@ -35,4 +46,14 @@ console.log(Animal.ANT.value)
 // 1
 Animal.toArray()
 // (4) [Animal, Animal, Animal, Animal]
+
+const IntAnimal = Enum.IntEnum('IntAnimal','ANT BEE CAT DOG')
+IntAnimal.toArray()
+// (4) [IntAnimal, IntAnimal, IntAnimal, IntAnimal]
+console.log(IntAnimal.ANT.value)
+// 1
+IntAnimal.ANT + 1
+// 2
+IntAnimal.ANT.CAT === IntAnimal.CAT
+// true
 ```
