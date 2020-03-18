@@ -58,3 +58,10 @@ IntAnimal.ANT + 1
 IntAnimal.ANT.CAT === IntAnimal.CAT
 // true
 ```
+
+Note: IntEnum values behave like integers in other ways you’d expect. 
+
+
+## Other Enum features
+
+As of right now (3/17/2020) I will only be implementing the necessary Python enum module features for my own project. If you need additional enum features to be ported over from python you can make an issue and I'll consider it or make a pull request. A pull request will be more seriously considered.
