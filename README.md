@@ -7,7 +7,7 @@ This the repository for the python-enum npm package. This package was created as
 
 The following code examples demonstrate the JavaScript analogs of the Python enum module.
 
-Python:
+*Python:*
 ```
 import enum as Enum
 
@@ -22,7 +22,7 @@ list(Animal)
 # [<Animal.ANT: 1>, <Animal.BEE: 2>, <Animal.CAT: 3>, <Animal.DOG: 4>]
 ```
 
-JavaScript:
+*JavaScript:*
 ```
 import Enum from 'enum'
 
