@@ -47,6 +47,7 @@ console.log(Animal.ANT.value)
 Animal.toArray()
 // (4) [Animal, Animal, Animal, Animal]
 
+
 const IntAnimal = Enum.IntEnum('IntAnimal','ANT BEE CAT DOG')
 IntAnimal.toArray()
 // (4) [IntAnimal, IntAnimal, IntAnimal, IntAnimal]
