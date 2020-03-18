@@ -1,0 +1,42 @@
+{
+  "name": "python-enum",
+  "version": "1.0.0",
+  "description": "An implementation of python-like enums in JavaScript.",
+  "main": "dist/enum.umd.js",
+  "module": "dist/enum.esm.js",
+  "unpkg": "dist/enum.min.js",
+  "browser": {
+    "./sfc": "src/enum.vue"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/enum.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/enum.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/enum.min.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcman7/python-enum.git"
+  },
+  "keywords": [
+    "enum",
+    "python",
+    "int-enum",
+    "IntEnum",
+    "enumeration"
+  ],
+  "author": "Andrew R Carpenter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arcman7/python-enum/issues"
+  },
+  "homepage": "https://github.com/arcman7/python-enum#readme",
+  "devDependencies": {
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-commonjs": "^10.1.0"
+  }
+}
