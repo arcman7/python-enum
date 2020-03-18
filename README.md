@@ -24,5 +24,15 @@ list(Animal)
 
 JavaScript:
 ```
+import Enum from 'enum'
 
+Animal = Enum('Animal', 'ANT BEE CAT DOG')
+console.log(Animal) 
+// ƒ [object Function]
+console.log(Animal.ANT)
+// Animal {val: 1, key: "ANT"}
+console.log(Animal.ANT.value)
+// 1
+Animal.toArray()
+// (4) [Animal, Animal, Animal, Animal]
 ```
