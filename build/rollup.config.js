@@ -6,6 +6,7 @@ export default {
     output: {
         name: 'Enum',
         exports: 'named',
+        format: 'cjs'
     },
     plugins: [
         commonjs(),

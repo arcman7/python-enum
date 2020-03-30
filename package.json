@@ -1,12 +1,12 @@
 {
   "name": "python-enum",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An implementation of python-like enums in JavaScript.",
   "main": "dist/enum.umd.js",
   "module": "dist/enum.esm.js",
   "unpkg": "dist/enum.min.js",
   "browser": {
-    "./sfc": "src/enum.vue"
+    "./sfc": "src/enum.js"
   },
   "directories": {
     "test": "test"
@@ -38,5 +38,13 @@
   "devDependencies": {
     "rollup-plugin-buble": "^0.19.8",
     "rollup-plugin-commonjs": "^10.1.0"
+  },
+  "jest": {
+    "moduleFileExtensions": ["js", "jsx"],
+    "moduleDirectories": ["node_modules", "bower_components", "shared"],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    }
   }
 }

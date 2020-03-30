@@ -126,6 +126,6 @@ function Enum(name, dict,  options) {
   return getUserEnum(name, dict, getUserClassStr, start, seperator, globalRef)
 }
 Enum.IntEnum = IntEnum;
-var src = Enum;
+module.exports = Enum;
 
-export default src;
+export default Enum;

@@ -132,9 +132,9 @@
     return getUserEnum(name, dict, getUserClassStr, start, seperator, globalRef)
   }
   Enum.IntEnum = IntEnum;
-  var src = Enum;
+  module.exports = Enum;
 
-  exports.default = src;
+  exports.default = Enum;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

@@ -187,3 +187,4 @@ function Enum(name, dict,  options = { seperator: null, start: 1 }) {
 }
 Enum.IntEnum = IntEnum
 module.exports = Enum
+export default Enum
