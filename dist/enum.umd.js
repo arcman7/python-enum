@@ -134,6 +134,7 @@
   var initSideEffect = Enum('init', { a: 1 });
   Enum.EnumMeta = process.__EnumMeta;
   Enum.IntEnum = IntEnum;
+  Enum.Enum = Enum;
   module.exports = Enum;
 
   exports.default = Enum;

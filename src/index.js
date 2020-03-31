@@ -196,5 +196,6 @@ function Enum(name, dict,  options = { seperator: null, start: 1 }) {
 const initSideEffect = Enum('init', { a: 1 })
 Enum.EnumMeta = process.__EnumMeta
 Enum.IntEnum = IntEnum
+Enum.Enum = Enum
 module.exports = Enum
 export default Enum
