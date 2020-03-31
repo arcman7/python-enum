@@ -11,7 +11,7 @@ The following code examples demonstrate the JavaScript analogs of the Python enu
 ```
 import enum as Enum
 
-Animal = Enum('Animal', 'ANT BEE CAT DOG')
+Animal = Enum.Enum('Animal', 'ANT BEE CAT DOG')
 print(Animal)
 # <enum 'Animal'>
 print(Animal.ANT)
@@ -37,7 +37,7 @@ IntAnimal.ANT.CAT == IntAnimal.CAT
 ```
 import Enum from 'enum'
 
-const Animal = Enum('Animal', 'ANT BEE CAT DOG')
+const Animal = Enum.Enum('Animal', 'ANT BEE CAT DOG')
 console.log(Animal) 
 // ƒ [object Function]
 console.log(Animal.ANT)
@@ -61,7 +61,22 @@ IntAnimal.ANT.CAT === IntAnimal.CAT
 
 Note: IntEnum values behave like integers in other ways you’d expect. 
 
+## Enum.EnumMeta
 
+You can check class type like so:
+Python
+```
+foo = new Enum.Enum('foo', { 'a': 1 })
+print(isinstance(foo, Enum.EnumMeta))
+# True
+```
+
+JavaScript
+```
+const foo = new Enum.Enum('foo', { a: 1 })
+console.log(foo instanceof Enum.EnumMeta)
+// true
+```
 ## Other Enum features
 
 As of right now (3/17/2020) I will only be implementing the necessary Python enum module features for my own project. If you need additional enum features to be ported over from python you can make an issue and I'll consider it or make a pull request. A pull request will be more seriously considered.
