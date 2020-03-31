@@ -129,24 +129,32 @@ function getUserEnum(name, userDict, templateFunc, start, seperator, globalRef) 
   var dict = globalRef.dict;
   var keys = globalRef.keys;
   var values = globalRef.values;
-  class EnumBase {
-    constructor(keys) {
-      this.keys = keys
-      this.toArray = this.toArray.bind(this)
-      this.has = this.has.bind(this)
-    }
-    toArray() {
-      const result = []
-      for (let i = 0; i < this.keys.length; i++) {
-        result.push(this[this.keys[i]])
+  let EnumMetaRef
+  if (process.__EnumMeta) {
+    EnumMetaRef = process.__EnumMeta
+  } else {
+    class EnumMeta {
+      constructor(keys) {
+        this.keys = keys
+        this.toArray = this.toArray.bind(this)
+        this.has = this.has.bind(this)
       }
-      return result
+      toArray() {
+        const result = []
+        for (let i = 0; i < this.keys.length; i++) {
+          result.push(this[this.keys[i]])
+        }
+        return result
+      }
+      has(key) {
+        return this.hasOwnProperty(key)
+      }
     }
-    has(key) {
-      return this.hasOwnProperty(key)
-    }
+    process.__EnumMeta = EnumMeta
+    EnumMetaRef = EnumMeta
   }
-  var ${name} = new EnumBase(keys);
+
+  var ${name} = new EnumMetaRef(keys);
   `
   str += templateFunc(name)
   str += `var val = dict[keys[${0}]]
@@ -164,7 +172,7 @@ function getUserEnum(name, userDict, templateFunc, start, seperator, globalRef) 
   str += `
   result = function (val) {
     if (!values.hasOwnProperty(val)) {
-      throw new Error('ValueError: ', val, ' is not a valid ', name)
+      throw new Error('ValueError: ' + val + ' is not a valid ' + ${name})
     }
     return ${name}[values[val]];
   }
@@ -185,6 +193,8 @@ function Enum(name, dict,  options = { seperator: null, start: 1 }) {
   const { start, seperator } = options
   return getUserEnum(name, dict, getUserClassStr, start, seperator, globalRef)
 }
+const initSideEffect = Enum('init', { a: 1 })
+Enum.EnumMeta = process.__EnumMeta
 Enum.IntEnum = IntEnum
 module.exports = Enum
 export default Enum
