@@ -64,14 +64,15 @@ Note: IntEnum values behave like integers in other ways you’d expect.
 ## Enum.EnumMeta
 
 You can check class type like so:
-Python
+
+**Python**
 ```
 foo = new Enum.Enum('foo', { 'a': 1 })
 print(isinstance(foo, Enum.EnumMeta))
 # True
 ```
 
-JavaScript
+**JavaScript**
 ```
 const foo = new Enum.Enum('foo', { a: 1 })
 console.log(foo instanceof Enum.EnumMeta)
