@@ -91,6 +91,7 @@ Shape.CIRCLE == Request.POST
 **JavaScript
 ```
 import IntEnum from 'python-enum'
+
 const Shape = IntEnum('Shape', {
   CIRCLE: 1,
   SQUARE: 2,
@@ -101,7 +102,7 @@ const Request = IntEnum('Request', {
  })
 Shape === 1
 // false
-Shape.CIRCLE == 1
+Shape.CIRCLE === 1
 // True
  hape.CIRCLE === Request.POST
 // True
