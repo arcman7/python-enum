@@ -136,6 +136,7 @@ function getUserEnum(name, userDict, templateFunc, start, seperator, globalRef) 
     class EnumMeta {
       constructor(keys) {
         this.keys = keys
+        this.member_names_ = this.keys
         this.toArray = this.toArray.bind(this)
         this.has = this.has.bind(this)
       }
