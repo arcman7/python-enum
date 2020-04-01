@@ -88,7 +88,7 @@ Shape.CIRCLE == Request.POST
 # True
 ```
 
-**JavaScript
+**JavaScript**
 ```
 import IntEnum from 'python-enum'
 
