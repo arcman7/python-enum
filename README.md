@@ -107,7 +107,7 @@ Shape.CIRCLE == 1
 // True
 ```
 
-## Enum.EnumMeta
+### EnumMeta
 
 You can check class type like so:
 
