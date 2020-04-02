@@ -104,7 +104,7 @@ Shape === 1
 // false
 Shape.CIRCLE === 1
 // True
- hape.CIRCLE === Request.POST
+ Shape.CIRCLE === Request.POST
 // True
 ```
 
