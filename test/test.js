@@ -41,7 +41,6 @@ assert(foo instanceof Enum.EnumMeta, 'foo instanceof Enum.EnumMeta')
 
 // int enum behavior
 foo = Enum.IntEnum('foo', { a: 1, b: 2 })
-console.log(typeof foo.a)
 assert(foo.a + 1 === 2, 'foo.a + 1 === 2')
 assert(foo(1) === foo.a, 'foo(1) === foo.a')
 assert(foo.a === foo.a.a, 'foo.a === foo.a.a') 
