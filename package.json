@@ -1,6 +1,6 @@
 {
   "name": "python-enum",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "An implementation of python-like enums in JavaScript.",
   "main": "dist/enum.umd.js",
   "module": "dist/enum.esm.js",

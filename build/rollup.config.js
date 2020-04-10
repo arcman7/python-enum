@@ -10,6 +10,5 @@ export default {
     },
     plugins: [
         commonjs(),
-        buble(), // Transpile to ES5
     ],
 };
