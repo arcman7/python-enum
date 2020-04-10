@@ -132,7 +132,7 @@ console.log(foo instanceof Enum.EnumMeta)
 
 **JavaScript**
 ```
-const foo = Enum.IntEnum('gfoobar', {
+const foo = Enum.IntEnum('foo', {
   _missing_: function _missing_() { return 10 },
   a: 1,
   b: 2,
