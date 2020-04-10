@@ -35,7 +35,7 @@ IntAnimal.ANT.CAT == IntAnimal.CAT
 
 **JavaScript:**
 ```
-import Enum from 'enum'
+import Enum from 'python-enum'
 
 const Animal = Enum.Enum('Animal', 'ANT BEE CAT DOG')
 console.log(Animal) 
@@ -61,7 +61,54 @@ IntAnimal.ANT.CAT === IntAnimal.CAT
 
 Note: IntEnum values behave like integers in other ways you’d expect. 
 
-## Enum.EnumMeta
+
+
+## Derived Enumerations
+
+### IntEnum
+The first variation of Enum that is provided is also a subclass of int. Members of an IntEnum can be compared to integers; by extension, integer enumerations of different types can also be compared to each other:
+
+**Python**
+
+ ```
+from enum import IntEnum
+ 
+class Shape(IntEnum):
+    CIRCLE = 1
+    SQUARE = 2
+class Request(IntEnum):
+    POST = 1
+    GET = 2
+
+Shape == 1
+# False
+Shape.CIRCLE == 1
+# True
+Shape.CIRCLE == Request.POST
+# True
+```
+
+**JavaScript**
+```
+import IntEnum from 'python-enum'
+
+const Shape = IntEnum('Shape', {
+  CIRCLE: 1,
+  SQUARE: 2,
+})
+const Request = IntEnum('Request', {
+  POST: 1,
+  GET: 2,
+ })
+Shape === 1
+// false
+Shape.CIRCLE === 1
+// True
+Shape.CIRCLE === Request.POST
+// True
+```
+
+### EnumMeta
 
 You can check class type like so:
 
