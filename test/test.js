@@ -54,7 +54,7 @@ assert(arr[1].val === 2, 'arr[1] === 2')
 assert(foo instanceof Enum.EnumMeta, 'foo instanceof Enum.EnumMeta')
 assert(foo['nothing here'] === undefined)
 foo = Enum.IntEnum('gfoobar', {
-  __missing__: function __missing__() { return 10 },
+  _missing_: function _missing_() { return 10 },
   a: 1,
   b: 2,
   c: 3,

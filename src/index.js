@@ -55,7 +55,7 @@ if (typeof(process) !== 'undefined') {
 }
 topLevelScope.EnumMeta = EnumMeta
 const specialKeys = {
-  __missing__: true,
+  _missing_: true,
 }
 function getDict({ dict, keys, start = 1, seperator }) {
   const usedDict = {}
@@ -90,7 +90,7 @@ function getDict({ dict, keys, start = 1, seperator }) {
     usedKeys.forEach((key, index) => {
       const valOfArray = dict[key]
       if (typeof valOfArray === 'function') {
-        // ex: __missing__
+        // ex: _missing_
         if (specialKeys[valOfArray.name]) {
           userMethods.push(valOfArray)
           return
@@ -153,13 +153,13 @@ function getUserEnum(name, userDict, start, seperator) {
         return target[name]
       }
       let val
-      if (target['__missing__'] ===  null) {
+      if (target['_missing_'] ===  null) {
         return undefined
       }
-      if (typeof target['__missing__'] === 'function') {
-        val = target['__missing__']()
+      if (typeof target['_missing_'] === 'function') {
+        val = target['_missing_']()
       } else {
-        val = target['__missing__']
+        val = target['_missing_']
       }
       return val
     },
