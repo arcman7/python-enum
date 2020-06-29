@@ -125,8 +125,23 @@ const foo = new Enum.Enum('foo', { a: 1 })
 console.log(foo instanceof Enum.EnumMeta)
 // true
 ```
+
+## Supported `_sunder_` names
+
+* `_missing_`  – a lookup function used when a value is not found; may be overridden
+
+**JavaScript**
+```
+const foo = Enum.IntEnum('foo', {
+  _missing_: function _missing_() { return 10 },
+  a: 1,
+  b: 2,
+  c: 3,
+})
+```
+
 ## Other Enum features
 
-As of right now (3/17/2020) I will only be implementing the necessary Python enum module features for my own project. If you need additional enum features to be ported over from python you can make an issue and I'll consider it or make a pull request. A pull request will be more seriously considered.
+As of right now (3/17/2020) I will only be implementing the necessary Python enum module features for my own use. If you need additional enum features to be ported over from python you can make an issue or make a pull request.
 
 For other feeback not strictly related to bugs or feature requests you can leave a comment [here](https://arcman7.github.io/en/notes/)
