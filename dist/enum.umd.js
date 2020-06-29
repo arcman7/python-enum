@@ -53,7 +53,7 @@
     }
   }
   let topLevelScope;
-  if (typeof(process) !== 'undefined') {
+  if (typeof(process) !== 'undefined' && !process.browser) {
       topLevelScope = process;
   } else {
     topLevelScope = window;
