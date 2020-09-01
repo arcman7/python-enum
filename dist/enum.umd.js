@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (global = global || self, factory(global.Enum = {}));
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.Enum = {}));
 }(this, (function (exports) { 'use strict';
 
   function getUserClassStr(name) {
@@ -32,8 +32,12 @@
         return this.val
       }
 
-      toString() {
+      repr() {
         return '${name}.' + this.key + ': ' + this.val
+      }
+
+      toString() {
+        return String(this.val)
       }
     };
   `

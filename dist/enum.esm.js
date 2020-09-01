@@ -26,8 +26,12 @@ function getUserClassStr(name) {
         return this.val
       }
 
-      toString() {
+      repr() {
         return '${name}.' + this.key + ': ' + this.val
+      }
+
+      toString() {
+        return String(this.val)
       }
     };
   `
